@@ -39,8 +39,8 @@ class LMTPChannel(asynchat.async_chat):
             self.__peer = conn.getpeername()
         except socket.error as err:
             self.close()
-            if err[0] != errno.ENOTCONN:
-                raise
+            # if err[0] != errno.ENOTCONN:
+            #     raise
             return
         print(b"Peer:", repr(self.__peer), file=DEBUGSTREAM)
 
